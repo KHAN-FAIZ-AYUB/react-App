@@ -1,6 +1,12 @@
 import { Fragment, useState } from "react";
 
-function ListGroup({ items, heading }: Props) {
+interface Props {
+  items: string[];
+  heading: string;
+  onSelectItem: (item: string) => void;
+}
+
+function ListGroup({ items, heading, onSelectItem }: Props) {
   //   Event handler
   //   const handleClick = (event: MouseEvent) => console.log(event);
 
@@ -22,6 +28,7 @@ function ListGroup({ items, heading }: Props) {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
