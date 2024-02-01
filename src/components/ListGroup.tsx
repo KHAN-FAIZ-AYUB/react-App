@@ -1,26 +1,23 @@
 import { Fragment } from "react";
 
 function ListGroup() {
-  let items = ["Mumbai", "Delhi", "Bangluru", "Goa"];
-  4;
-  items = [];
+  const items = ["Mumbai", "Delhi", "Bangluru", "Goa"];
+
+  //   Event handler
+  const handleClick = (event: MouseEvent) => console.log(event);
 
   return (
     <Fragment>
       <h1>List</h1>
       {items.length === 0 && <p>No items found</p>}
-    </Fragment>
-  );
-  return (
-    <Fragment>
-      <h1>List</h1>
       <ul className="list-group">
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li className="list-group-item" key={item} onClick={handleClick}>
+            {item}
+          </li>
         ))}
       </ul>
     </Fragment>
   );
 }
-
 export default ListGroup;
