@@ -1,8 +1,6 @@
 import { Fragment, useState } from "react";
 
-function ListGroup() {
-  const items = ["Mumbai", "Delhi", "Bangluru", "Goa"];
-
+function ListGroup({ items, heading }: Props) {
   //   Event handler
   //   const handleClick = (event: MouseEvent) => console.log(event);
 
@@ -11,7 +9,7 @@ function ListGroup() {
 
   return (
     <Fragment>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>No items found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
